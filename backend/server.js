@@ -5,6 +5,7 @@ import { v2 as cloudinary } from "cloudinary";
 
 import authRoutes from "./Routes/auth.routes.js";
 import userRoutes from "./Routes/user.routes.js";
+import postRoutes from "./Routes/post.routes.js";
 import connectMongoDB from "./database/connectMongoDB.js";
 
 dotenv.config();
@@ -28,6 +29,7 @@ app.use(cookieParser());
 // === MIDDLEWARE ROUTES ===
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/posts", postRoutes);
 // === MIDDLEWARE ROUTES ===
 
 app.listen(PORT, () => {
